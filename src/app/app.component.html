@@ -12,6 +12,17 @@
     </div>
 
     <div>
+      <label for="textArea"></label>
+      <textarea
+        name="textArea"
+        id="textArea"
+        cols="30"
+        rows="10"
+        formControlName="textArea"
+      ></textarea>
+    </div>
+
+    <div>
       <button [disabled]="formLogin.invalid">Enviar</button>
     </div>
   </form>
