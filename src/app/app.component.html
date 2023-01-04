@@ -12,9 +12,13 @@
     </div>
 
     <div>
-      <button>Enviar</button>
+      <button [disabled]="formLogin.invalid">Enviar</button>
     </div>
   </form>
 </div>
 
-<div>Valido:</div>
+<div>
+  Valido:
+
+  {{ formLogin.valid | json }}
+</div>

@@ -10,16 +10,19 @@ export class AppComponent implements OnInit {
 
   public formLogin: FormGroup;
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(private formBuilder: FormBuilder){
+    this.formLogin = this.formBuilder.group({
+      email:['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]]
+    });
+  }
 
   ngOnInit(): void {
-    this.formLogin=this.formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    })
   }
 
   send():any{
     console.log(this.formLogin.value)
   }
 }
+
+
